@@ -1,0 +1,40 @@
+#cloud-config
+autoinstall:
+  version: 1
+
+  identity:
+    hostname: ubuntu1-dev
+
+  locale: en_US.UTF-8
+
+  keyboard:
+    layout: fi
+    variant: ""
+
+  timezone: Europe/Helsinki
+
+  identity:
+    hostname: ubuntu-dev
+    username: xhawk
+    password: "$6$rounds=656000$kOhbNdpQ5RUe7Bhu$H6sYOvieR3xSQPkbLKf64CwOI6p6duFqPwVg/vKGCCbb8UFvdbcUXM.n1pscjD/gWOCYpO7M5edGof1lUHRRv0"
+
+  ssh:
+    install-server: true
+    allow-pw: true
+    authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIASWGGDd9/d58PvEoKvjtpNTV04zLhCR8Qfs7APtb9PI macbook-pro-m5-tomi.savolainen@nitor.com
+
+  packages:
+    - openssh-server
+    - git
+    - curl
+
+  storage:
+    layout:
+      name: direct
+
+  updates: all
+
+  late-commands:
+    - curtin in-target -- systemctl enable ssh
+
