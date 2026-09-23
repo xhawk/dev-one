@@ -25,7 +25,7 @@ sudo systemctl enable --now avahi-daemon
 
 echo "==> Setting default shell to fish"
 if [[ "$SHELL" != */fish ]]; then
-    chsh -s "$(command -v fish)"
+    sudo chsh -s "$(command -v fish)" "$USER"
 fi
 
 echo "==> Done"
