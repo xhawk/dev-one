@@ -24,8 +24,8 @@ echo "==> Configuring Avahi"
 sudo systemctl enable --now avahi-daemon
 
 echo "==> Setting default shell to fish"
-if [[ "$SHELL" != */fish ]]; then
-    sudo chsh -s "$(command -v fish)" "$USER"
+if [[ "$(getent passwd "$USER" | cut -d: -f7)" != "$(command -v fish)" ]]; then
+    sudo usermod -s "$(command -v fish)" "$USER"
 fi
 
 echo "==> Done"
