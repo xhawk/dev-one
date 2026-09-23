@@ -2,14 +2,6 @@
 autoinstall:
   version: 1
 
-  locale: en_US.UTF-8
-
-  keyboard:
-    layout: fi
-    variant: ""
-
-  timezone: Europe/Helsinki
-
   identity:
     hostname: ubuntu-dev
     username: xhawk
@@ -17,21 +9,10 @@ autoinstall:
 
   ssh:
     install-server: true
-    allow-pw: true
     authorized-keys:
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIASWGGDd9/d58PvEoKvjtpNTV04zLhCR8Qfs7APtb9PI macbook-pro-m5-tomi.savolainen@nitor.com
-
-  packages:
-    - openssh-server
-    - git
-    - curl
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIASWGGDd9/d58PvEoKvjtpNTV04zLhCR8Qfs7APtb9PI macbook-pro-m5-tomi.savolainen@nitor.com"
+    allow-pw: false
 
   storage:
     layout:
       name: direct
-
-  updates: all
-
-  late-commands:
-    - curtin in-target -- systemctl enable ssh
-
