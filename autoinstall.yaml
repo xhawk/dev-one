@@ -7,6 +7,14 @@ autoinstall:
     username: xhawk
     password: "$6$rounds=656000$kOhbNdpQ5RUe7Bhu$H6sYOvieR3xSQPkbLKf64CwOI6p6duFqPwVg/vKGCCbb8UFvdbcUXM.n1pscjD/gWOCYpO7M5edGof1lUHRRv0"
 
+  locale: en_US.UTF-8
+
+  keyboard:
+    layout: fi
+    variant: ""
+
+  timezone: Europe/Helsinki
+  
   ssh:
     install-server: true
     authorized-keys:
