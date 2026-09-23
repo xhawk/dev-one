@@ -2,9 +2,6 @@
 autoinstall:
   version: 1
 
-  identity:
-    hostname: ubuntu1-dev
-
   locale: en_US.UTF-8
 
   keyboard:
