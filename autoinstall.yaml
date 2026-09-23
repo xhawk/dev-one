@@ -24,3 +24,7 @@ autoinstall:
   storage:
     layout:
       name: direct
+
+  packages:
+    - git
+    - curl
